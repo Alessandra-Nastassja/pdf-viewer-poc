@@ -1,7 +1,8 @@
 <ng2-pdfjs-viewer 
-  #externalPdfViewer 
-  [externalWindow]="true" 
-  openFile="false" 
-  [useOnlyCssZoom]=true 
-  target="_myWindow">
+  [pdfSrc]="'gre_research_validity_data.pdf'" 
+  viewerId="MyUniqueID" 
+  (onBeforePrint)="testBeforePrint()" 
+  (onAfterPrint)="testAfterPrint()" 
+  (onDocumentLoad)="testPagesLoaded($event)" 
+  (onPageChange)="testPageChange($event)">
 </ng2-pdfjs-viewer>
